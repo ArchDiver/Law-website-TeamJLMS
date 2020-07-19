@@ -2,6 +2,7 @@
   /* margin: 0;
   padding: 0; */
   font-family: 'Source Sans Pro', sans-serif;
+  font-family: Verdana;
 }
 body, html {
   background-image: url(images/nza_background.jpg);
@@ -12,25 +13,11 @@ body, html {
   display: grid;
   width: 100%;
   height: 100%;
-  /* grid-template-columns: 20% 20% 40% 20%; */
-  /* grid-template-rows: 14% 9% 63% 7% 7%; */
+
   grid-template-columns: 5px 6fr 5px;
   grid-template-areas: 
     ". center ."
-    /* ". logo      logo          ."
-    ". navbar    navbar        ."
-    ". sidebar   content-text  ."
-    ". links     links         ."
-    ". copyright copyright     ."; */
-
 }
-
-/* .blank1 {
-  grid-area: blank1;
-  width: 100%;
-  height: 100%;
-  background-color: none;
-} */
 
 .center {
   grid-area: center;
@@ -45,8 +32,7 @@ body, html {
   "sidebar content-text"
   "links links"
   "copyright copyright";
-  /* grid-template-columns: 2fr 4 fr;
-  grid-template-rows: 2 fr 1 fr 9fr 1 fr 1fr; */
+
 }
 
 /* -----------------------------------------------------End of Grid Layout------------------------------------ */
@@ -68,55 +54,49 @@ div.logo img{
 .navbar {
   grid-area: nav;
   display: flex;
-  /* justify-content: space-between;
-  justify-items: space-between; */
-  /* justify-content: space-evenly; */
   width: 100%;
-  height: 1fr
-  background-color: whitesmoke;
+  height: 1fr;
   border-top: 2px solid black;
   border-bottom: 2px solid black;
-  margin:auto;
+  list-style-type: none;
+
+  /* margin:auto; */
 }
 .navbar ul {
   display: flex;
-  flex-direction: row;
-  justify-items: space-evenly;
-  /* justify-content: space-around; */
   list-style-type: none;
   margin: 0 auto;
   padding: 0;
   overflow: hidden;
   background-color: whitesmoke;
-  /* text-align: center; */
 }
 
-.navbar li {
+.navbar ul li {
   padding-right: 5%;
   border-right:1px solid rgb(135, 146, 157);
 }
 
-.navbar li:last-child {
+.navbar ul li:last-child {
   padding: 0;
   border-right: none;
 }
 
 .navbar li a {
-  /* font-family: Arial, Helvetica, sans-serif; */
   width: auto;
   height: 100%;
   font-weight: 600;
   font-size: 100%;
   text-align: center;
   text-transform: uppercase;
-  display: inline-block;
+  display: flex;
+  justify-content: space-between;
   color: black;
   margin: 0 auto;
   padding: 0px 16px;
   text-decoration: none;
 }
 
-.navbar nav li a:hover:not(.active) {
+.navbar ul li a:hover:not(.active) {
   background-color:rgb(135, 146, 157);
   border: 2px solid black;
   color: whitesmoke;
@@ -134,7 +114,7 @@ div.sidebar {
   height: 600px;
   width: 100%;
   /* margin: 0; */
-  margin-top: 2%;
+  margin-top: 20px;
   color: antiquewhite;
   background-color: rgb(128, 0, 0);
   display: grid;
@@ -243,8 +223,9 @@ div.sidebar-attny {
   grid-area: content-text;
   width: 100%;
   height: 100%;
+  margin: 20px
   background-color: whitesmoke;
-  grid-template-rows: 2fr 7fr;
+  grid-template-rows: 1fr 7fr;
   grid-template-areas: "text photo-wrap";
 }
 
@@ -263,53 +244,56 @@ div.sidebar-attny {
 }
 
 div.text p {
-  margin: 5%;
+  margin: 5% 5% 0 5%;
   grid-area: text;
   width: 90%;
-  height: 4fr;
+  height: 100%;
   margin: 0;
 }
 
 div.photo-wrap {
   grid-area: photoboxes-wrapper;
-  width: 90%;
-  height: 90%;
-  margin: 0 2.5%;
-  background-color: rgba(39, 37, 37, 0.5);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  /* grid-auto-flow: row; */
-  /* grid-auto-rows: column; */
-  /* grid-template-rows: 2fr; */
-  /* grid-template-columns: 2fr; */
-  /* grid-gap: 0; */
-}
-
-div.photo {
+  width: 80%;
+  height: auto;
   margin: 0;
   padding: 0;
+  align-self: start;
+  justify-self: center;
+  /* border: 10px solid blue; */
+  display: grid;
+  /* grid-template-columns: repeat(2, 2fr);
   justify-content: center;
-  align-content: center;
+  align-content: center; */
+  grid-template-areas: 
+   "photo1 photo2"
+   "photo3 photo4";
 }
 
-.photo a img{
-  text-align: none;
-  color: none;
+div.wrap-photo a img {
   width: 100%;
-  margin: 0;
-  padding: 0;
-  /* display: flex; */
-  /* display: grid; */
-  /* gap: 0;
-  grid-auto-flow: column; */
-
-  /* width: repeat(auto-fit, minmax(100px, .2fr));
-  height: repeat(auto-fit, minmax(100px, .2fr)); */
+  height: 100%%;
 }
 
 
+.photo-1 {
+  grid-area: photo1;
+  align-self:end;
+}
 
+.photo-2 {
+  grid-area: photo2;
+  align-self:end;
+}
+
+.photo-3 {
+  grid-area: photo3;
+  align-self:start;
+}
+
+.photo-4 {
+  grid-area: photo4;
+  align-self: start;
+}
 
 
 
@@ -390,8 +374,5 @@ div.photo {
    grid-template-columns: 2fr 6fr 2fr;
    grid-template-areas: 
      ". center ."
-
- 
  }
-
 }
