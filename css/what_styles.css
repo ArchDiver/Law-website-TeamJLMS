@@ -64,11 +64,14 @@ div.logo img{
 }
 .navbar ul {
   display: flex;
+  width: 100%;
+  justify-content: space-around;
   list-style-type: none;
   margin: 0 auto;
   padding: 0;
   overflow: hidden;
   background-color: whitesmoke;
+  text-align: center;
 }
 
 .navbar ul li {
