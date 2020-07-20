@@ -23,7 +23,7 @@ body, html {
   grid-area: center;
   display: grid;
   width: 96%;
-  height: 96%%;
+  height: 96%;
   padding: 4%;
   background-color: whitesmoke;
   grid-template: 
@@ -64,11 +64,14 @@ div.logo img{
 }
 .navbar ul {
   display: flex;
+  width: 100%;
+  justify-content: space-around;
   list-style-type: none;
   margin: 0 auto;
   padding: 0;
   overflow: hidden;
   background-color: whitesmoke;
+  text-align: center;
 }
 
 .navbar ul li {
@@ -196,8 +199,6 @@ ul.sub-items {
 div.sidebar-attny {
   grid-area: sidebar-attny;
   display: inline;
-  height: 100%;
-  width: 100%;
   margin: 0;
   padding: 0;
   color: antiquewhite;
@@ -212,7 +213,7 @@ div.sidebar-attny {
 .sidebar-attny h6, h5 {
   width: 70%;
   margin: 0 0 0 5%;
-  padding 0
+  padding: 0;
 }
 
 
@@ -221,16 +222,17 @@ div.sidebar-attny {
 /* -------------------------------content-text----------------------- */
 .content-text {
   grid-area: content-text;
+  flex-wrap: wrap;
   width: 100%;
   height: 100%;
-  margin: 20px
-  background-color: whitesmoke;
+  margin: 20px;
   grid-template-rows: 1fr 7fr;
   grid-template-areas: "text photo-wrap";
 }
 
 .content-text {
   grid-area: content-text;
+  flex-wrap: wrap;
   width: 95%;
   height: 100%;
   margin-left: 5%;
@@ -252,6 +254,7 @@ div.text p {
 }
 
 div.photo-wrap {
+  flex-wrap: wrap;
   grid-area: photoboxes-wrapper;
   width: 80%;
   height: auto;
@@ -261,38 +264,39 @@ div.photo-wrap {
   justify-self: center;
   /* border: 10px solid blue; */
   display: grid;
-  /* grid-template-columns: repeat(2, 2fr);
+  grid-template-columns: repeat(2, 2fr);
   justify-content: center;
-  align-content: center; */
+  align-content: center;
   grid-template-areas: 
    "photo1 photo2"
    "photo3 photo4";
 }
 
 div.wrap-photo a img {
+  flex-wrap: wrap;
   width: 100%;
-  height: 100%%;
+  height: 100%;
 }
 
 
 .photo-1 {
   grid-area: photo1;
-  align-self:end;
+  /* align-self:end; */
 }
 
 .photo-2 {
   grid-area: photo2;
-  align-self:end;
+  /* align-self:end; */
 }
 
 .photo-3 {
   grid-area: photo3;
-  align-self:start;
+  /* align-self:start; */
 }
 
 .photo-4 {
   grid-area: photo4;
-  align-self: start;
+  /* align-self: start; */
 }
 
 
@@ -324,9 +328,6 @@ div.wrap-photo a img {
   padding: 0;
   overflow: hidden;
   text-align: center;
-}
-
-.links li {
 }
 
 .links li:last-child {
@@ -365,7 +366,7 @@ div.wrap-photo a img {
   margin: 0;
   padding: 0;
 }
-
+/*-------------------------------------------------------Adapt to larger screens--------------------------------- */
 @media screen and (min-width: 813px) {
   .page {
     display: grid;
